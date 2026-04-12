@@ -35,8 +35,9 @@ void recover_password(Node *nodes, char vault[][COLS], int len, char *out) {
         {
             continue;
         }    
-        int column = current_node.col_val + current_node.col_disp
-        out[i] = '?';
+        unsigned char column = *current_node + current_node.col_disp
+        int row = current_node.row_index
+        out[i] = vault[row][column];
     }
     out[len] = '\0';
 }
