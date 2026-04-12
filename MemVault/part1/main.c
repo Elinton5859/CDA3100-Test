@@ -16,15 +16,13 @@ void recover_password(Node *nodes, char vault[][COLS], int len, char *out) {
     if (nodes == NULL || out == NULL) {
         return;
     }
-    * nodes is the 
-
     /*
      * TODO:
      * Implement password recovery.
      *
      * Requirements:
-     * 1. Iterate through all nodes.
-     * 2. Ignore nodes that are not valid or do not contribute.
+     * 1. Iterate through all nodes. X
+     * 2. Ignore nodes that are not valid or do not contribute. X
      * 3. Compute the column index using pointer arithmetic and col_disp.
      * 4. Use row_index and the computed column to read from vault[row][col].
      * 5. Store the recovered character into out[position].
@@ -32,6 +30,12 @@ void recover_password(Node *nodes, char vault[][COLS], int len, char *out) {
      */
 
     for (int i = 0; i < len; i++) {
+        Node current_node = nodes[i];
+        if(current_node.valid == 0 || current_node.contributes == 0)
+        {
+            continue;
+        }    
+        int column = current_node.
         out[i] = '?';
     }
     out[len] = '\0';
