@@ -16,6 +16,7 @@ void recover_password(Node *nodes, char vault[][COLS], int len, char *out) {
     if (nodes == NULL || out == NULL) {
         return;
     }
+    * nodes is the 
 
     /*
      * TODO:
